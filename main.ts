@@ -6,6 +6,10 @@ basic.forever(function () {
             maqueen.motorRun(maqueen.Motors.M1, maqueen.Dir.CW, 70)
         }
     } else {
-    	
+        if (maqueen.readPatrol(maqueen.Patrol.PatrolLeft) == 2 || maqueen.readPatrol(maqueen.Patrol.PatrolRight) == 2) {
+            basic.pause(700)
+            maqueen.motorStop(maqueen.Motors.All)
+            maqueen.motorRun(maqueen.Motors.M1, maqueen.Dir.CW, 50)
+        }
     }
 })
