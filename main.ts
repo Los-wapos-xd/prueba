@@ -6,9 +6,9 @@ basic.forever(function () {
             maqueen.motorRun(maqueen.Motors.All, maqueen.Dir.CW, 70)
         }
     } else {
-        maqueen.motorRun(maqueen.Motors.All, maqueen.Dir.CCW, 50)
+        maqueen.motorRun(maqueen.Motors.All, maqueen.Dir.CCW, 70)
         maqueen.motorStop(maqueen.Motors.M2)
-        basic.pause(500)
-        maqueen.motorRun(maqueen.Motors.M1, maqueen.Dir.CCW, 70)
+        basic.pause(200)
+        maqueen.motorRun(maqueen.Motors.M1, maqueen.Dir.CCW, 120)
     }
 })
