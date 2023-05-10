@@ -12,7 +12,17 @@ basic.forever(function () {
             basic.pause(700)
             maqueen.motorRun(maqueen.Motors.M1, maqueen.Dir.CCW, 120)
         } else {
-        	
+            if (maqueen.readPatrol(maqueen.Patrol.PatrolLeft) == 1 || maqueen.readPatrol(maqueen.Patrol.PatrolRight) == 0) {
+                maqueen.motorStop(maqueen.Motors.M2)
+                basic.pause(700)
+                maqueen.motorRun(maqueen.Motors.M2, maqueen.Dir.CCW, 120)
+            } else {
+                if (maqueen.readPatrol(maqueen.Patrol.PatrolLeft) == 0 || maqueen.readPatrol(maqueen.Patrol.PatrolRight) == 1) {
+                    maqueen.motorStop(maqueen.Motors.M1)
+                    basic.pause(700)
+                    maqueen.motorRun(maqueen.Motors.M2, maqueen.Dir.CCW, 120)
+                }
+            }
         }
     }
 })
